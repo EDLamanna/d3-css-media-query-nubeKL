@@ -22,7 +22,7 @@ body {
 
 nav {
   grid-area: menu-navegacion;
-  background-color: rgba(238, 147, 226, 0.435);
+  background: linear-gradient(to bottom,rgba(238, 147, 226, 0.435), rgb(238, 147, 226),rgba(238, 147, 226, 0.435)) ;
   display: grid;
   grid-template-columns: 10fr 1fr 1fr;
   column-gap: 1em;
@@ -63,7 +63,7 @@ nav {
 
 header {
   grid-area: filtro-de-busqueda-cabecera;
-  background-color: rgba(103, 202, 224, 0.818);
+  background: linear-gradient(to bottom,rgba(103, 202, 224), rgb(103, 202, 224, 0.60),rgb(103, 202, 224) ) ;
 }
 
 .drop-list-container {
@@ -178,7 +178,7 @@ main {
 
 footer {
   grid-area: pie-de-pagina;
-  background-color: rgba(236, 141, 190, 0.584);
+  background: linear-gradient(to bottom, rgba(236, 141, 190, 0.584), rgb(236, 141, 190)) ;
   display: grid;
   grid-template-areas:
     "contact-number     logo-footer        pagos"
@@ -286,11 +286,6 @@ footer {
     grid-template-areas: "logo navegation buy";
   }
 
-  .logo {
-    grid-area: logo;
-    display: logo;
-  }
-
   .navegation {
     grid-area: navegation;
     display: flex;
@@ -299,13 +294,22 @@ footer {
   .list-category {
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 3px;
+  }
+
+  .list-category > li{
+    width: 6em;
+    text-align: center;
   }
 
   .list-category a {
     color: white;
     font-weight: bold;
     font-size: 18px;
+  }
+
+  .list-category > li:hover{
+    background-color: rgb(87, 173, 204);
   }
 
   .buy {
@@ -317,14 +321,9 @@ footer {
 
   aside {
     grid-area: filtro-de-busqueda-lateral;
-    background-color: rgba(103, 202, 224, 0.818);
+    background: linear-gradient(to bottom,rgba(103, 202, 224), rgb(103, 202, 224, 0.60),rgb(103, 202, 224) );
     display: flex;
     flex-direction: column;
-  }
-
-  main {
-    grid-area: seccion-principal;
-    justify-items: center;
   }
 
   .galeria {
@@ -383,8 +382,6 @@ footer {
 
   .buy {
     display: flex;
-    justify-content: center;
-    align-items: center;
     width: 250px;
     height: 50px;
   }
@@ -392,7 +389,6 @@ footer {
   .navegation {
     display: flex;
     justify-content: center;
-    align-items: start;
     height: calc(100vh - 80px - 50px);
     margin: 18px;
   }
@@ -403,15 +399,13 @@ footer {
     gap: 10px;
   }
 
+  .list-category > li{
+    width: 12em;
+  }
+
   header {
     grid-area: filtro-de-busqueda-cabecera;
     display: grid;
-  }
-
-  .drop-list-container {
-    display: flex;
-    grid-template-columns: 1fr;
-    row-gap: 0.5em;
   }
 
   .drop-list-container > h2 {
@@ -425,13 +419,14 @@ footer {
   .galeria {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    width: calc(100vw - 250px);
   }
 
   .footer {
     grid-area: pie-de-pagina;
     display: grid;
-    grid-area: "contact-number   pagos" "rrss             pagos"
-      "right-reserve    right-reserve";
+    grid-area:
+    "contact-number   pagos" 
+    "rrss             pagos"
+    "right-reserve    right-reserve";
   }
 }
