@@ -14,7 +14,7 @@ body {
   display: grid;
   grid-template-areas:
     "menu-navegacion"
-    "filtro-de-busqueda-cabecera"
+    "filtro-de-busqueda"
     "seccion-principal"
     "pie-de-pagina";
   grid-template-rows: 65px 75px calc(100vh - 65px - 75px - 120px) 120px;
@@ -62,7 +62,7 @@ nav {
 }
 
 header {
-  grid-area: filtro-de-busqueda-cabecera;
+  grid-area: filtro-de-busqueda;
   background: linear-gradient(to bottom,rgba(103, 202, 224), rgb(103, 202, 224, 0.60),rgb(103, 202, 224) ) ;
 }
 
@@ -256,16 +256,9 @@ footer {
   .navegation {
     display: none;
   }
-
-  aside {
-    display: none;
-  }
 }
 
 @media (min-width: 576px) {
-  header {
-    display: none;
-  }
   .menu {
     display: none;
   }
@@ -274,7 +267,7 @@ footer {
     display: grid;
     grid-template-areas:
       "menu-navegacion                menu-navegacion"
-      "filtro-de-busqueda-lateral     seccion-principal"
+      "filtro-de-busqueda             seccion-principal"
       "pie-de-pagina                  pie-de-pagina";
     grid-template-rows: 65px calc(100vh - 65px - 120px) 120px;
     grid-template-columns: 250px calc(100vw - 250px);
@@ -319,8 +312,8 @@ footer {
     width: 5em;
   }
 
-  aside {
-    grid-area: filtro-de-busqueda-lateral;
+  header {
+    grid-area: filtro-de-busqueda;
     background: linear-gradient(to bottom,rgba(103, 202, 224), rgb(103, 202, 224, 0.60),rgb(103, 202, 224) );
     display: flex;
     flex-direction: column;
@@ -332,7 +325,7 @@ footer {
     width: calc(100vw - 250px);
   }
 
-  .drop-list-container-aside {
+  .drop-list-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -342,16 +335,13 @@ footer {
     margin: 1em;
   }
 
-  .drop-list-aside {
+  .drop-list {
     width: 15em;
     height: 2em;
   }
 }
 
 @media (min-width: 992px) {
-  aside {
-    display: none;
-  }
 
   .logo-footer > img {
     display: none;
@@ -360,7 +350,7 @@ footer {
   body {
     display: grid;
     grid-template-areas:
-      "menu-navegacion                filtro-de-busqueda-cabecera"
+      "menu-navegacion                filtro-de-busqueda"
       "menu-navegacion                seccion-principal"
       "pie-de-pagina                  seccion-principal";
     grid-template-rows: 80px calc(100vh - 80px - 120px) 120px;
@@ -403,9 +393,8 @@ footer {
     width: 12em;
   }
 
-  header {
-    grid-area: filtro-de-busqueda-cabecera;
-    display: grid;
+  .drop-list-container{
+    gap: 8px;
   }
 
   .drop-list-container > h2 {
@@ -414,6 +403,7 @@ footer {
 
   .drop-list {
     width: 90%;
+    
   }
 
   .galeria {
